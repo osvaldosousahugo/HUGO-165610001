@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>My First PWA</title>
+  <meta name="description" content="My first PWA"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/materialize.min.css">
+</head> 
+<body>
+
+  <!-- Navigasi -->
+  <nav class="teal lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo" id="logo-container">My App</a> 
+      <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a> 
+      
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul class="sidenav" id="nav-mobile"></ul>
+      
+    </div>
+  </nav>
+  <!-- Akhir Navigasi -->
+
+  <div class="container" id="body-content"></div>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/nav.js"></script>
+   <script>
+    // pada pembagian pola tag leyout kelas di atas ,div terbagi atas beberapa kelas kontainer pada body program code,di mana href menyimpan beberapa link yang terdapat pada tag body //
+
+
+  //service worker masuk ke navigator ,setelah masuk service worker tidak meresppod,retun lanjut membaca //
+if  (!('serviceWorker'  in  navigator)) {
+        console.log('Service    worker  not supported');
+        //return;
+}
+//setelah masuk ke navigator service worker melakukan registrasi atas nama hugo.js code,dan kemudian masuk ke fungsi setelah itu service worker mulai register //
+navigator.serviceWorker.register('hugo.js')
+.then(function()    {
+        console.log('Registered');
+})
+// jika terjadi kesalahan navigator akan menampilkan error pada aplication info //
+.catch(function(error)  {
+        console.log('Registration   failed:',   error);
+});
+    </script>
+  
+</body>
+</html> 
